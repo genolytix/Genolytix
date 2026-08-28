@@ -1,0 +1,56 @@
+      <div class="contact-wrap">
+        <div class="contact-info">
+          <p class="label">Organisation</p>
+          <p>Genolytix Technology<br />A division of Suryon Enterprise LLP</p>
+
+          <p class="label">Address</p>
+          <p>D-9/15, EKT Phase-IV<br />Kolkata &mdash; 700107<br />West Bengal, India</p>
+
+          <p class="label">Email</p>
+          <p><a href="mailto:customer_service@genolytix.co.in">customer_service@genolytix.co.in</a></p>
+
+          <p class="label">Response time</p>
+          <p>We usually reply within two working days.</p>
+        </div>
+
+        <!-- ACTION REQUIRED: this form has no backend yet, so it falls back to
+             opening the visitor's mail client. Nothing is silently dropped, but
+             a real endpoint is better. Two options:
+
+             1. Formspree — create a free form at https://formspree.io, then set
+                action="https://formspree.io/f/YOUR_ID" method="POST" on the form
+                below and delete the submit handler in main.js.
+
+             2. Vercel serverless — add api/contact.js to this repo and set
+                action="/api/contact" method="POST". Vercel picks up the api/
+                folder automatically, no config needed. -->
+        <form id="contactForm" novalidate>
+          <div class="field">
+            <label for="cname">Your name</label>
+            <input id="cname" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="cemail">Email</label>
+            <input id="cemail" name="email" type="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="ctopic">What is this about?</label>
+            <select id="ctopic" name="topic">
+              <option>Research collaboration</option>
+              <option>Drug discovery project</option>
+              <option>Netra / eye-care programme</option>
+              <option>Services enquiry</option>
+              <option>Workshop registration</option>
+              <option>Job or internship application</option>
+              <option>Something else</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cmsg">Message</label>
+            <textarea id="cmsg" name="message" rows="5" required></textarea>
+          </div>
+          <button class="btn" type="submit">Send message</button>
+          <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
+          <p class="form-note">We use what you send only to reply to you.</p>
+        </form>
+      </div>

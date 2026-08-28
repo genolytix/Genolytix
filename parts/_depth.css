@@ -1,0 +1,148 @@
+
+    /* =========================================================
+       DEPTH LAYER
+       Everything below is new. The site's subject is molecular
+       structure, so the 3D is literal: a rotating molecular
+       lattice behind the dark bands, and real perspective on the
+       cards. Angles stay small on purpose — this should read as
+       depth, not as a carousel trick.
+       ========================================================= */
+
+    :root {
+      --tilt-max: 7deg;      /* card rotation ceiling */
+      --tilt-lift: 26px;     /* how far content floats above the card face */
+    }
+
+    /* ---------- Page banner (every page except home) ---------- */
+    .page-hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(900px 460px at 12% 120%, rgba(0, 188, 212, .2), transparent 62%),
+        linear-gradient(160deg, var(--navy-deep), var(--navy) 58%, #0e3559);
+      color: #fff;
+      padding: clamp(56px, 9vw, 92px) clamp(20px, 7vw, 72px) clamp(52px, 8vw, 78px);
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .page-hero::after {
+      content: ""; position: absolute;
+      width: 460px; height: 460px; right: -150px; top: -180px;
+      background: radial-gradient(circle, rgba(0, 188, 212, .26), transparent 70%);
+      pointer-events: none;
+    }
+
+    .page-hero-inner {
+      position: relative; z-index: 1;
+      max-width: var(--maxw); margin: 0 auto;
+    }
+
+    .page-hero .eyebrow { margin-bottom: 18px; animation: rise .5s both; }
+
+    .page-hero h1 {
+      font-family: "Fraunces", serif; font-weight: 500;
+      font-size: clamp(30px, 4.8vw, 46px); line-height: 1.1;
+      letter-spacing: -.02em; margin-bottom: 14px;
+      animation: rise .5s .06s both;
+    }
+
+    .page-hero p.page-lead {
+      color: #d0e0ec; font-size: clamp(16px, 2vw, 19px);
+      max-width: 660px; margin: 0;
+      animation: rise .5s .12s both;
+    }
+
+    /* The banner sits flush under the header, so the section below
+       it starts tighter than a standalone section would. */
+    .page-hero + .section { padding-top: clamp(50px, 6vw, 70px); }
+
+    /* ---------- Card perspective ---------- */
+    /* JS adds .tilt only on devices with a real pointer. Without it
+       these rules do nothing, so touch and keyboard users get the
+       plain flat card. */
+    .tilt {
+      transform-style: preserve-3d;
+      transform: perspective(1100px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateZ(0);
+      transition: transform .5s cubic-bezier(.2, .7, .3, 1), box-shadow .35s;
+      will-change: transform;
+    }
+    .tilt.is-tilting { transition: box-shadow .35s; }
+
+    /* The shadow swings opposite the tilt, as if the card were lifting
+       away from a fixed light. This is the depth cue — a sheen over the
+       card face washed out the body copy for no real gain. */
+    .tilt.is-tilting {
+      box-shadow: var(--sx, 0px) var(--sy, 16px) 44px rgba(10, 37, 64, .22);
+    }
+
+    /* Content floats above the card face, which is what actually
+       sells the depth — a tilting rectangle alone just looks skewed. */
+    .tilt > * { transform: translateZ(var(--tilt-lift)); transform-style: preserve-3d; }
+    .tilt .icon,
+    .tilt .avatar { transform: translateZ(calc(var(--tilt-lift) + 22px)); }
+
+    .card.tilt, .role.tilt, .news-item.tilt, .paper.tilt, .programme.tilt { position: relative; }
+
+    /* The flat hover lifts would fight the tilt transform. */
+    .card.tilt.hoverable:hover { transform: perspective(1100px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); }
+    .paper.tilt:hover { transform: perspective(1100px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); }
+
+    /* ---------- Reveal, with depth ---------- */
+    .reveal {
+      opacity: 0;
+      transform: perspective(1000px) rotateX(7deg) translateY(26px);
+      transition: opacity .55s ease, transform .55s cubic-bezier(.2, .7, .3, 1);
+    }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* ---------- Home: what's on the rest of the site ---------- */
+    .explore { padding: clamp(64px, 8vw, 90px) clamp(20px, 7vw, 72px); max-width: var(--maxw); margin: 0 auto; }
+
+    .explore-card {
+      display: block; text-decoration: none; color: inherit;
+      background: var(--card); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 26px 26px 22px;
+      box-shadow: var(--shadow); height: 100%;
+    }
+    .explore-card .step {
+      font-family: "JetBrains Mono", monospace; font-size: 11.5px;
+      letter-spacing: .12em; color: var(--cyan-ink); font-weight: 600;
+    }
+    .explore-card h3 {
+      font-family: "Fraunces", serif; font-weight: 600; font-size: 20px;
+      color: var(--navy); margin: 10px 0 8px;
+    }
+    .explore-card p { color: var(--muted); font-size: 15px; }
+    .explore-card .more {
+      display: inline-block; margin-top: 14px;
+      color: var(--cyan-ink); font-weight: 600; font-size: 14.5px;
+    }
+
+    /* ---------- Contact panel carries its own lattice ---------- */
+    .contact { position: relative; overflow: hidden; }
+    .contact > *:not(.fx3d) { position: relative; z-index: 1; }
+    /* Dialled back so the form stays the thing you look at. */
+    .contact .fx3d { border-radius: var(--radius-lg); opacity: .5; }
+
+    /* ---------- Motion and pointer guards ---------- */
+    @media (hover: none) {
+      .tilt { transform: none; }
+      .tilt > * { transform: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .page-hero .eyebrow, .page-hero h1, .page-hero p.page-lead { animation: none; }
+      .tilt, .tilt > * { transform: none !important; transition: none; }
+      .tilt.is-tilting { box-shadow: var(--shadow); }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    @media (max-width: 860px) {
+      .explore { padding: 56px 22px; }
+
+      /* The collapsed menu kept 8px of vertical padding, so the active
+         nav link painted a sliver under the header on every page.
+         Padding now only exists while the menu is open. */
+      nav { padding-top: 0; padding-bottom: 0; }
+      nav.open { padding-top: 8px; padding-bottom: 18px; }
+    }
