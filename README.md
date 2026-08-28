@@ -35,17 +35,28 @@ parts/              optional, see below
    Framework preset: **Other**. Output directory: leave empty.
 3. `vercel.json` turns on clean URLs, so `/work` serves `work.html`.
 
-### Still to add
+### Brand assets
 
-These are referenced by the pages but not included here. Drop them in the
-repository root:
+All included, nothing left to add:
 
-- `logo.png` — the header logo, displayed at 169×46
-- `favicon.ico`
-- `apple-touch-icon.png`
-- `og-cover.png` — 1200×630, used for link previews on LinkedIn, WhatsApp and X
+- `logo.svg` — header logo, white wordmark for dark backgrounds, 161×46
+- `logo-on-light.svg` — navy wordmark, for white backgrounds and print
+- `logo.png` / `logo-on-light.png` — 483×138 raster fallbacks for email
+  signatures, slide decks and anywhere SVG isn't accepted
+- `logo-mark.svg` — the helix alone in a navy tile, for avatars and app icons
+- `logo-mark-plain.svg` — the helix with no tile, for placing on your own colour
+- `favicon.ico`, `apple-touch-icon.png`, `icon-192.png`, `icon-512.png`
+- `og-cover.svg` / `og-cover.png` — 1200×630 link preview card
 
-Without `og-cover.png` shared links will show no image.
+The mark is a 2D projection of a real 3D double helix: each node's depth is
+the cosine of its phase, and that depth sets its size, colour and opacity.
+It's the same depth language as the background lattice, and it reads as both
+DNA and a sampled series — geno and lytix.
+
+The wordmark is Fraunces, the same face as the site's headings, converted to
+outlines so the files are self-contained and need no webfont.
+
+Regenerate any of it with `python3 logo_build.py`.
 
 ### Placeholder links
 

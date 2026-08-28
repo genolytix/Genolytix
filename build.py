@@ -96,8 +96,8 @@ def head(title, desc, canonical, extra=""):
   <meta property="og:image" content="{SITE}/og-cover.png" />
   <meta name="twitter:card" content="summary_large_image" />
 
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -105,7 +105,7 @@ def head(title, desc, canonical, extra=""):
     href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Spline+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
     rel="stylesheet" />
 
-  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="styles.css" />
 {extra}</head>
 """
 
@@ -123,7 +123,7 @@ def header(active):
 
   <header>
     <a class="brand" href="/" aria-label="Genolytix Technology — home">
-      <img src="/logo.png" alt="Genolytix Technology" width="169" height="46" />
+      <img src="logo.svg" alt="Genolytix Technology" width="161" height="46" />
     </a>
 
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">&#9776;</button>
@@ -169,8 +169,8 @@ FOOTER = """
     </div>
   </footer>
 
-  <script src="/lattice.js" defer></script>
-  <script src="/main.js" defer></script>
+  <script src="lattice.js" defer></script>
+  <script src="main.js" defer></script>
 </body>
 
 </html>

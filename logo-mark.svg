@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" width="96" height="96" role="img" aria-label="Genolytix">
+  <defs>
+    <linearGradient id="strand" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00BCD4"/>
+      <stop offset="1" stop-color="#5EEAD4"/>
+    </linearGradient>
+  </defs>
+  <rect width="96" height="96" rx="21.1" fill="#0A2540"/>
+  <g transform="translate(23.2 19.2)">
+    <line x1="48.83" y1="8.26" x2="8.77" y2="8.26" stroke="#00BCD4" stroke-width="1.28" stroke-opacity="0.527" stroke-linecap="round"/>
+    <line x1="39.17" y1="16.51" x2="18.43" y2="16.51" stroke="#00BCD4" stroke-width="1.05" stroke-opacity="0.350" stroke-linecap="round"/>
+    <line x1="14.14" y1="24.77" x2="43.46" y2="24.77" stroke="#00BCD4" stroke-width="1.15" stroke-opacity="0.429" stroke-linecap="round"/>
+    <line x1="10.84" y1="33.02" x2="46.76" y2="33.02" stroke="#00BCD4" stroke-width="1.23" stroke-opacity="0.489" stroke-linecap="round"/>
+    <line x1="34.17" y1="41.28" x2="23.43" y2="41.28" stroke="#00BCD4" stroke-width="0.93" stroke-opacity="0.258" stroke-linecap="round"/>
+    <line x1="49.54" y1="49.54" x2="8.06" y2="49.54" stroke="#00BCD4" stroke-width="1.30" stroke-opacity="0.540" stroke-linecap="round"/>
+    <path d="M28.80 0.00 L31.55 0.84 L34.26 1.68 L36.86 2.52 L39.33 3.36 L41.60 4.20 L43.66 5.04 L45.45 5.88 L46.94 6.72 L48.11 7.56 L48.94 8.40 L49.42 9.24 L49.53 10.08 L49.27 10.91 L48.65 11.75 L47.68 12.59 L46.38 13.43 L44.76 14.27 L42.87 15.11 L40.72 15.95 L38.36 16.79 L35.83 17.63 L33.18 18.47 L30.45 19.31 L27.70 20.15 L24.96 20.99 L22.29 21.83 L19.73 22.67 L17.34 23.51 L15.15 24.35 L13.19 25.19 L11.52 26.03 L10.15 26.87 L9.11 27.71 L8.42 28.55 L8.09 29.39 L8.13 30.23 L8.53 31.06 L9.29 31.90 L10.40 32.74 L11.83 33.58 L13.56 34.42 L15.57 35.26 L17.80 36.10 L20.23 36.94 L22.81 37.78 L25.50 38.62 L28.25 39.46 L31.00 40.30 L33.72 41.14 L36.35 41.98 L38.85 42.82 L41.17 43.66 L43.27 44.50 L45.11 45.34 L46.67 46.18 L47.90 47.02 L48.81 47.86 L49.35 48.70 L49.54 49.54" fill="none" stroke="url(#strand)" stroke-width="2.2" stroke-linecap="round" stroke-opacity=".8"/>
+    <path d="M28.80 0.00 L26.05 0.84 L23.34 1.68 L20.74 2.52 L18.27 3.36 L16.00 4.20 L13.94 5.04 L12.15 5.88 L10.66 6.72 L9.49 7.56 L8.66 8.40 L8.18 9.24 L8.07 10.08 L8.33 10.91 L8.95 11.75 L9.92 12.59 L11.22 13.43 L12.84 14.27 L14.73 15.11 L16.88 15.95 L19.24 16.79 L21.77 17.63 L24.42 18.47 L27.15 19.31 L29.90 20.15 L32.64 20.99 L35.31 21.83 L37.87 22.67 L40.26 23.51 L42.45 24.35 L44.41 25.19 L46.08 26.03 L47.45 26.87 L48.49 27.71 L49.18 28.55 L49.51 29.39 L49.47 30.23 L49.07 31.06 L48.31 31.90 L47.20 32.74 L45.77 33.58 L44.04 34.42 L42.03 35.26 L39.80 36.10 L37.37 36.94 L34.79 37.78 L32.10 38.62 L29.35 39.46 L26.60 40.30 L23.88 41.14 L21.25 41.98 L18.75 42.82 L16.43 43.66 L14.33 44.50 L12.49 45.34 L10.93 46.18 L9.70 47.02 L8.79 47.86 L8.25 48.70 L8.06 49.54" fill="none" stroke="url(#strand)" stroke-width="2.2" stroke-linecap="round" stroke-opacity=".8"/>
+    <circle cx="28.80" cy="0.00" r="1.50" fill="#00BCD4" opacity="0.400"/>
+    <circle cx="23.43" cy="41.28" r="1.54" fill="#00BCD4" opacity="0.409"/>
+    <circle cx="39.17" cy="16.51" r="1.64" fill="#00BCD4" opacity="0.437"/>
+    <circle cx="14.14" cy="24.77" r="1.81" fill="#00BCD4" opacity="0.481"/>
+    <circle cx="46.76" cy="33.02" r="2.03" fill="#00BCD4" opacity="0.538"/>
+    <circle cx="8.77" cy="8.26" r="2.29" fill="#00BCD4" opacity="0.604"/>
+    <circle cx="8.06" cy="49.54" r="2.56" fill="#00BCD4" opacity="0.675"/>
+    <circle cx="49.54" cy="49.54" r="2.56" fill="#5EEAD4" opacity="0.675"/>
+    <circle cx="48.83" cy="8.26" r="2.84" fill="#5EEAD4" opacity="0.746"/>
+    <circle cx="10.84" cy="33.02" r="3.09" fill="#5EEAD4" opacity="0.812"/>
+    <circle cx="43.46" cy="24.77" r="3.31" fill="#5EEAD4" opacity="0.869"/>
+    <circle cx="18.43" cy="16.51" r="3.48" fill="#5EEAD4" opacity="0.913"/>
+    <circle cx="34.17" cy="41.28" r="3.59" fill="#5EEAD4" opacity="0.941"/>
+    <circle cx="28.80" cy="0.00" r="3.62" fill="#5EEAD4" opacity="0.950"/>
+  </g>
+</svg>
