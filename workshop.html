@@ -204,7 +204,7 @@ tr.break td{ background:#f6fafb; color:var(--muted); font-style:italic; }
   margin-bottom:4px;
 }
 .detail dd{ font-size:17px; color:var(--navy); }
-.detail dd a{ color:var(--teal-dark); }
+.detail dd a, .form-done a{ color:var(--teal-dark); }
 
 /* ---------- Schedule rows: speaker name over topic ---------- */
 .who{ display:block; font-weight:bold; color:var(--navy); }
@@ -625,7 +625,6 @@ footer a{ color:var(--mint); }
       <h2 class="section-title" style="margin-bottom:10px">Registration</h2>
       <p>Seats are limited and allotted on a first-come, first-served basis.</p>
 
-      <!-- TODO: the email address and phone number below are still placeholders. -->
       <dl class="details">
         <div class="detail">
           <dt>Venue</dt>
@@ -649,15 +648,23 @@ footer a{ color:var(--mint); }
         </div>
         <div class="detail">
           <dt>Email</dt>
-          <dd><a href="mailto:workshop@example.ac.in">workshop@example.ac.in</a></dd>
+          <dd><a href="mailto:genolytix.technology@gmail.com">genolytix.technology@gmail.com</a></dd>
         </div>
         <div class="detail">
           <dt>Phone</dt>
-          <dd><a href="tel:+910000000000">+91 00000 00000</a></dd>
+          <dd><a href="tel:+918335037321">+91 83350 37321</a></dd>
         </div>
       </dl>
 
-      <div class="reg-grid">
+      <!-- Shown instead of the payment box and form until REGISTRATION_ENDPOINT is filled in below. -->
+      <p id="regSoon" class="form-done" hidden>
+        <strong>Online registration opens soon</strong>
+        Please do not pay yet. To be told when registration opens, email
+        <a href="mailto:genolytix.technology@gmail.com">genolytix.technology@gmail.com</a>
+        or call <a href="tel:+918335037321">+91 83350 37321</a>.
+      </p>
+
+      <div class="reg-grid" id="regGrid">
 
         <div class="pay-box">
           <h3>Pay the registration fee</h3>
@@ -809,6 +816,12 @@ footer a{ color:var(--mint); }
 
   const now = new Date();
   const abstractsOpen = now <= ABSTRACT_DEADLINE;
+
+  // No endpoint yet: nothing could be saved, so hide the payment box and the form.
+  if (!REGISTRATION_ENDPOINT) {
+    $('regGrid').style.display = 'none';
+    $('regSoon').hidden = false;
+  }
 
   if (now > PAYMENT_DEADLINE) {
     form.hidden = true;
