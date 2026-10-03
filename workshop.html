@@ -293,6 +293,9 @@ tr.highlight td{ background:#ecfaf7; }
 .field.check{ display:flex; gap:10px; align-items:flex-start; }
 .field.check input{ width:18px; height:18px; margin-top:3px; flex:none; }
 .field.check label{ font-size:15px; color:var(--navy); margin:0; }
+/* While the tick box is switched off (category is not "Student"), show it greyed out. */
+.field.check input:disabled{ cursor:not-allowed; }
+.field.check input:disabled + label{ color:#8492a0; cursor:not-allowed; }
 .poster-fields{ border-left:4px solid var(--mint); padding-left:18px; }
 .hp{ position:absolute; left:-9999px; }   /* spam trap: real visitors never see or fill this */
 .fee-line{ font-weight:bold; color:var(--navy); margin-bottom:16px; }
@@ -731,7 +734,7 @@ footer a{ color:var(--mint); }
             <div id="posterBlock">
               <div class="field check">
                 <input id="regPoster" name="poster" type="checkbox" disabled>
-                <label for="regPoster">I want to present a poster (abstracts are accepted until 20 October 2026)</label>
+                <label for="regPoster">I want to present a poster (students only; abstracts are accepted until 20 October 2026)</label>
               </div>
               <p id="posterNote" class="hint" style="margin:-8px 0 16px">
                 Poster presentations are for students. Select “Student” as your category, then tick
@@ -941,6 +944,8 @@ footer a{ color:var(--mint); }
         ? 'Your payment reference ' + payload.transactionId + ' has been recorded.'
         : 'Your fee of ₹' + payload.fee.toLocaleString('en-IN') +
           ' is still due: pay by 25 October 2026 and send this form again with your UPI reference number.');
+      if (data.emailed) parts.push('A confirmation email has been sent to ' + payload.email +
+          '. If you cannot find it, check your spam folder.');
       text.textContent = parts.join(' ');
       done.replaceChildren(heading, text);
       form.hidden = true;
