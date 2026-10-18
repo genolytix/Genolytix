@@ -186,7 +186,7 @@ ORG_JSONLD = """  <script type="application/ld+json">
     "logo": "https://genolytix.co.in/logo.png",
     "email": "customer_service@genolytix.co.in",
     "parentOrganization": { "@type": "Organization", "name": "Suryon Enterprise LLP" },
-    "description": "AI and computational solutions for drug discovery and healthcare, including generative molecular design and AI-assisted eye-care screening.",
+    "description": "AI and computational solutions for drug discovery and healthcare, including generative molecular design and AI-assisted diagnosis.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Suryon Enterprise LLP, D-9/15, EKT Phase-IV",
@@ -211,7 +211,7 @@ HOME_BODY = """
         <span class="eyebrow">AI &middot; Drug discovery &middot; Accessible healthcare</span>
         <h1>AI Solutions for <span class="accent">Healthcare &amp; Biotechnology</span></h1>
         <p class="sub">Transforming biological data into scientific intelligence &mdash; from computational
-          design to clinical analytics. From AI-driven drug discovery to accessible eye-care screening, we
+          design to clinical analytics. From AI-driven drug discovery to accessible diagnodsis, we
           build the models that turn hard biology into decisions people can act on.</p>
         <div class="hero-actions">
           <a class="btn" href="/work">See what we're building</a>
