@@ -295,8 +295,8 @@ def build():
         head(
             "Genolytix Technology — AI for Drug Discovery &amp; Accessible diagnosis",
             "Genolytix Technology builds AI for biology and healthcare: end-to-end drug discovery from "
-            "target identification to molecule generation, and an AI cataract screening app that gives "
-            "people in India free access to eye-care guidance.",
+            "target identification to molecule generation, and an AI diagnosis app that gives"
+            "doctors in India access to diagnosis assistance.",
             "/",
             ORG_JSONLD,
         ) + header("") + HOME_BODY + FOOTER,
