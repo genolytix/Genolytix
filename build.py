@@ -293,7 +293,7 @@ def build():
     # ---- home ----
     (ROOT / "index.html").write_text(
         head(
-            "Genolytix Technology — AI for Drug Discovery &amp; Accessible Eye Care",
+            "Genolytix Technology — AI for Drug Discovery &amp; Accessible diagnosis",
             "Genolytix Technology builds AI for biology and healthcare: end-to-end drug discovery from "
             "target identification to molecule generation, and an AI cataract screening app that gives "
             "people in India free access to eye-care guidance.",
