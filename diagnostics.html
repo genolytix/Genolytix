@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Research in AI-driven cancer diagnostics using deep learning, histopathology image analysis, evolutionary model optimization and geometric representation learning.">
+<title>AI-Driven Cancer Diagnostics | Research & Innovation</title>
+<style>
+:root{
+  --navy:#102a43; --blue:#1769aa; --cyan:#19a7b8; --ink:#183247;
+  --muted:#607487; --pale:#f2f8fc; --line:#dce8f0; --white:#fff;
+  --green:#16866b; --shadow:0 18px 48px rgba(16,42,67,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.container{width:min(1160px,calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--navy);letter-spacing:-.3px}
+.brandmark{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:white;font-size:19px;font-weight:900}
+nav{display:flex;gap:25px;align-items:center;font-size:14px;font-weight:650;color:#496174}
+nav a:hover{color:var(--blue)}
+.nav-cta,.button{display:inline-flex;align-items:center;justify-content:center;padding:11px 18px;border-radius:10px;background:var(--blue);color:#fff;font-weight:700;border:1px solid var(--blue);transition:.2s}
+.nav-cta:hover,.button:hover{background:#0d4f86;transform:translateY(-1px)}
+.menu{display:none;background:none;border:0;font-size:25px;color:var(--navy)}
+.hero{position:relative;overflow:hidden;background:radial-gradient(circle at 82% 18%,rgba(25,167,184,.18),transparent 27%),linear-gradient(120deg,#0b2540 0%,#123d62 58%,#0d6477 100%);color:#fff;padding:94px 0 88px}
+.hero:after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.12) 1px,transparent 1px);background-size:24px 24px;opacity:.28;pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}
+.eyebrow{display:inline-block;text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:800;color:#91e4e5;margin-bottom:17px}
+h1{font-size:clamp(38px,5vw,60px);line-height:1.08;letter-spacing:-1.8px;margin:0 0 22px}
+.hero p{font-size:18px;color:#d9e9f4;max-width:650px;margin:0 0 30px}
+.hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+.button.light{background:#fff;color:var(--navy);border-color:#fff}
+.button.outline{background:transparent;border-color:rgba(255,255,255,.55);color:#fff}
+.hero-note{margin-top:23px;font-size:12px;color:#b8d1e0}
+.visual-card{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.2);border-radius:24px;padding:24px;box-shadow:0 25px 70px rgba(0,0,0,.16)}
+.visual-card h3{margin:0 0 18px;font-size:15px;color:#d7f5f4;letter-spacing:.4px}
+.network{width:100%;height:auto;display:block}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+.stat{padding:14px;border-radius:13px;background:rgba(255,255,255,.1);text-align:center}
+.stat strong{display:block;font-size:21px;color:#fff}
+.stat span{font-size:11px;color:#c6e0ec}
+section{padding:82px 0}
+.section-kicker{font-size:12px;text-transform:uppercase;letter-spacing:1.8px;color:var(--blue);font-weight:850}
+.section-title{font-size:clamp(29px,3.5vw,42px);line-height:1.16;letter-spacing:-1px;color:var(--navy);margin:10px 0 15px}
+.section-intro{max-width:760px;color:var(--muted);font-size:17px;margin:0}
+.center{text-align:center}
+.center .section-intro{margin:0 auto}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:42px}
+.about-panel{background:var(--pale);border:1px solid var(--line);padding:30px;border-radius:20px}
+.about-panel h3{margin:0 0 12px;color:var(--navy);font-size:21px}
+.about-panel p{margin:0;color:var(--muted)}
+.checklist{list-style:none;padding:0;margin:22px 0 0}
+.checklist li{padding:10px 0 10px 30px;position:relative;border-bottom:1px solid var(--line);color:#435b6d}
+.checklist li:before{content:"✓";position:absolute;left:0;top:9px;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:#d8f3ec;color:var(--green);font-weight:900;font-size:12px}
+.method{background:var(--pale)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:38px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:25px;box-shadow:0 8px 26px rgba(16,42,67,.04)}
+.card-icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:#e4f2fb;color:var(--blue);font-size:23px;margin-bottom:18px}
+.card h3{font-size:19px;color:var(--navy);margin:0 0 9px}
+.card p{color:var(--muted);font-size:14px;margin:0}
+.tag{display:inline-block;margin-top:16px;font-size:11px;font-weight:800;color:#1769aa;background:#eaf5fc;padding:5px 9px;border-radius:20px}
+.pipeline{margin-top:42px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:var(--shadow)}
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:stretch}
+.flow-item{position:relative;text-align:center;padding:20px 12px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(180deg,#fff,#f5faff)}
+.flow-item:not(:last-child):after{content:"›";position:absolute;right:-13px;top:40%;font-size:25px;font-weight:900;color:var(--blue);z-index:2}
+.flow-num{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;margin:0 auto 10px;background:var(--blue);color:#fff;font-weight:800;font-size:13px}
+.flow-item strong{display:block;color:var(--navy);font-size:14px;line-height:1.3}
+.flow-item small{display:block;margin-top:7px;color:var(--muted);font-size:11px}
+.deep{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:24px}
+.deep-card{border-radius:18px;padding:25px;background:#f1f8fc;border:1px solid #d8eaf4}
+.deep-card h3{margin:0 0 9px;color:var(--navy)}
+.deep-card p{margin:0;color:var(--muted);font-size:14px}
+.metrics{background:linear-gradient(135deg,#0e2b47,#14516b);color:#fff}
+.metrics .section-kicker{color:#8be1df}
+.metrics .section-title{color:#fff}
+.metrics .section-intro{color:#c6dce8}
+.metric-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:13px;margin-top:35px}
+.metric{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);padding:19px 12px;border-radius:14px;text-align:center}
+.metric strong{font-size:21px;display:block;color:#fff}
+.metric span{font-size:12px;color:#c6dce8}
+.metric-note{font-size:12px;color:#b8d1df;margin-top:18px;max-width:900px}
+.roadmap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+.roadmap-item{padding:24px;border-left:3px solid var(--cyan);background:#f7fafc;border-radius:0 14px 14px 0}
+.roadmap-item h3{margin:0 0 8px;color:var(--navy);font-size:17px}
+.roadmap-item p{margin:0;color:var(--muted);font-size:14px}
+.disclaimer{margin-top:28px;padding:17px 20px;background:#fff8e8;border:1px solid #f0dfb5;border-radius:12px;color:#735a23;font-size:13px}
+.contact{background:var(--pale)}
+.contact-box{display:flex;align-items:center;justify-content:space-between;gap:30px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:35px;box-shadow:var(--shadow);margin-top:32px}
+.contact-box h3{font-size:24px;color:var(--navy);margin:0 0 7px}
+.contact-box p{margin:0;color:var(--muted)}
+footer{background:#0b2034;color:#b7cbd9;padding:30px 0;font-size:13px}
+.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer strong{color:#fff}
+@media(max-width:900px){
+ nav{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;padding:20px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}
+ nav.open{display:flex}.menu{display:block}.nav-cta{display:none}
+ .hero-grid,.about-grid{grid-template-columns:1fr}.hero{padding:70px 0}.visual-card{max-width:620px}
+ .cards{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:repeat(2,1fr)}.flow-item:after{display:none}
+ .metric-grid{grid-template-columns:repeat(3,1fr)}.roadmap-grid{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+ .container{width:min(100% - 28px,1160px)}section{padding:60px 0}
+ .cards,.deep{grid-template-columns:1fr}.flow{grid-template-columns:1fr}.metric-grid{grid-template-columns:repeat(2,1fr)}
+ .contact-box{align-items:flex-start;flex-direction:column;padding:25px}.stats{gap:8px}.stat{padding:10px 5px}
+ .stat strong{font-size:18px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="AI cancer diagnostics home">
+      <span class="brandmark">AI</span><span>AI Cancer Diagnostics<br><small style="font-size:10px;color:#71879a;font-weight:650;letter-spacing:1px">RESEARCH & INNOVATION</small></span>
+    </a>
+    <button class="menu" aria-label="Open navigation" onclick="document.querySelector('nav').classList.toggle('open')">☰</button>
+    <nav>
+      <a href="#about">Overview</a><a href="#research">Research</a><a href="#pipeline">Workflow</a><a href="#results">Evaluation</a><a href="#future">Future directions</a>
+    </nav>
+    <a class="nav-cta" href="#contact">Collaborate with us</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="container hero-grid">
+  <div>
+   <span class="eyebrow">Artificial intelligence · Computational pathology</span>
+   <h1>Advancing cancer diagnostics through AI-driven histopathology</h1>
+   <p>Developing intelligent deep-learning methods to analyse histopathological images, identify cancer patterns and explore more robust approaches to computer-assisted diagnostic research.</p>
+   <div class="hero-actions">
+    <a class="button light" href="#research">Explore our research</a>
+    <a class="button outline" href="#pipeline">View the methodology</a>
+   </div>
+   <div class="hero-note">Research focus: breast cancer histopathology · Deep learning · Geometric representation analysis</div>
+  </div>
+  <div class="visual-card">
+   <h3>FROM HISTOPATHOLOGY IMAGES TO LEARNED REPRESENTATIONS</h3>
+   <svg class="network" viewBox="0 0 520 310" role="img" aria-label="Illustration of histopathology image features passing through a neural network">
+    <defs>
+     <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#68d5d4"/><stop offset="1" stop-color="#3c8ed0"/></linearGradient>
+     <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#c6f5e8"/><stop offset="1" stop-color="#69c8d9"/></linearGradient>
+    </defs>
+    <rect x="12" y="30" width="105" height="105" rx="13" fill="#f6d9ed" stroke="#fff" stroke-width="3"/>
+    <g fill="#c64b9d" opacity=".9"><circle cx="38" cy="56" r="13"/><circle cx="76" cy="48" r="9"/><circle cx="91" cy="88" r="17"/><circle cx="48" cy="103" r="19"/><circle cx="75" cy="115" r="8"/></g>
+    <g fill="#6d287f"><circle cx="39" cy="56" r="5"/><circle cx="76" cy="48" r="4"/><circle cx="91" cy="88" r="7"/><circle cx="48" cy="103" r="8"/></g>
+    <text x="64" y="157" fill="#eaf7ff" text-anchor="middle" font-size="13">Image input</text>
+    <path d="M130 82 H168" stroke="#9de9e5" stroke-width="4" stroke-linecap="round"/><path d="M158 72 L170 82 L158 92" fill="none" stroke="#9de9e5" stroke-width="4"/>
+    <g fill="url(#g1)" stroke="#c5f5f4" stroke-width="2">
+      <rect x="181" y="45" width="34" height="100" rx="5"/><rect x="224" y="57" width="30" height="76" rx="5"/>
+      <rect x="263" y="68" width="27" height="54" rx="5"/><rect x="299" y="76" width="24" height="39" rx="5"/>
+    </g>
+    <g stroke="#a9e8ed" stroke-width="1.5" opacity=".7"><path d="M215 55 L224 66 M215 135 L224 124 M254 67 L263 76 M254 123 L263 114 M290 77 L299 84"/></g>
+    <text x="250" y="157" fill="#eaf7ff" text-anchor="middle" font-size="13">ResNet50 features</text>
+    <path d="M337 82 H369" stroke="#9de9e5" stroke-width="4" stroke-linecap="round"/><path d="M359 72 L371 82 L359 92" fill="none" stroke="#9de9e5" stroke-width="4"/>
+    <rect x="382" y="35" width="122" height="95" rx="14" fill="url(#g2)" stroke="#fff" stroke-width="2"/>
+    <g fill="#147e8c"><circle cx="405" cy="62" r="7"/><circle cx="433" cy="52" r="7"/><circle cx="461" cy="65" r="7"/><circle cx="489" cy="54" r="7"/><circle cx="418" cy="94" r="7"/><circle cx="449" cy="101" r="7"/><circle cx="480" cy="91" r="7"/></g>
+    <g stroke="#147e8c" stroke-width="1.5" opacity=".7"><path d="M405 62L433 52L461 65L489 54M405 62L418 94L449 101L480 91L489 54M433 52L449 101M461 65L418 94"/></g>
+    <text x="443" y="157" fill="#eaf7ff" text-anchor="middle" font-size="13">Learned patterns</text>
+    <path d="M65 193 V224 H443 V193" fill="none" stroke="#77d8d9" stroke-width="2" stroke-dasharray="5 5"/>
+    <rect x="102" y="239" width="316" height="49" rx="12" fill="rgba(255,255,255,.13)" stroke="rgba(255,255,255,.35)"/>
+    <text x="260" y="260" fill="#fff" text-anchor="middle" font-size="14" font-weight="700">Classification · Model evolution</text>
+    <text x="260" y="278" fill="#c8e9ef" text-anchor="middle" font-size="11">Manifold and curvature analysis</text>
+   </svg>
+   <div class="stats">
+    <div class="stat"><strong>ResNet50</strong><span>Transfer learning</span></div>
+    <div class="stat"><strong>DGM</strong><span>Model evolution</span></div>
+    <div class="stat"><strong>Riemannian</strong><span>Manifold analysis</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="about">
+ <div class="container">
+  <span class="section-kicker">Research overview</span>
+  <h2 class="section-title">Making histopathology analysis more intelligent and interpretable</h2>
+  <p class="section-intro">Our research explores how deep neural networks can learn discriminative patterns from tissue images, how model performance can be improved through iterative optimization, and how the geometry of learned representations can be studied.</p>
+  <div class="about-grid">
+   <div>
+    <h3 style="color:var(--navy);font-size:23px">A computational approach to digital pathology</h3>
+    <p style="color:var(--muted)">Histopathological examination is central to cancer diagnosis. Digital pathology makes tissue images available for computational analysis. Our work investigates AI methods that can support the analysis of breast tissue histology images, with an initial focus on benign and malignant classification.</p>
+    <ul class="checklist">
+     <li>Image-based feature extraction and classification</li>
+     <li>Transfer learning with pretrained convolutional networks</li>
+     <li>Evolutionary optimization of model configurations</li>
+     <li>Geometric analysis of latent feature spaces</li>
+    </ul>
+   </div>
+   <div class="about-panel">
+    <h3>Research objective</h3>
+    <p>To develop and evaluate a computational pipeline combining deep learning, iterative model improvement and differential-geometric analysis for histopathological image classification.</p>
+    <div style="margin-top:22px;padding-top:18px;border-top:1px solid var(--line)">
+     <strong style="color:var(--blue)">Primary application</strong>
+     <p style="margin-top:5px">Breast cancer histopathology using the BreakHis image dataset.</p>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="method" id="research">
+ <div class="container">
+  <div class="center">
+   <span class="section-kicker">Core research areas</span>
+   <h2 class="section-title">Three complementary layers of AI research</h2>
+   <p class="section-intro">The project connects predictive modelling with automated model refinement and mathematical analysis of learned representations.</p>
+  </div>
+  <div class="cards">
+   <article class="card"><div class="card-icon">▦</div><h3>Deep learning for histopathology</h3><p>ResNet50 transfer learning is used to extract image features and build a classifier for breast histopathology images. The workflow includes image resizing, normalization, augmentation and dataset partitioning.</p><span class="tag">ResNet50 · BreakHis</span></article>
+   <article class="card"><div class="card-icon">↻</div><h3>DGM-inspired self-improvement</h3><p>An iterative evolution loop explores candidate model configurations by modifying hyperparameters and selected training settings. Candidates are trained, evaluated on validation data and compared to update the best-model archive.</p><span class="tag">Candidate generation · Selection</span></article>
+   <article class="card"><div class="card-icon">⌁</div><h3>Manifold and Riemannian analysis</h3><p>A convolutional autoencoder is used to study the learned feature manifold. Decoder Jacobians define a pullback metric, with spectral analysis and curvature estimates used to examine local representation geometry.</p><span class="tag">Autoencoder · Metric · Curvature</span></article>
+  </div>
+ </div>
+</section>
+
+<section id="pipeline">
+ <div class="container">
+  <span class="section-kicker">End-to-end methodology</span>
+  <h2 class="section-title">From tissue images to evaluated AI models</h2>
+  <p class="section-intro">A modular workflow designed to separate model development, model selection and final performance assessment.</p>
+  <div class="pipeline">
+   <div class="flow">
+    <div class="flow-item"><span class="flow-num">1</span><strong>Histopathology dataset</strong><small>BreakHis breast tissue images</small></div>
+    <div class="flow-item"><span class="flow-num">2</span><strong>Preprocessing</strong><small>Resize · normalize · augment</small></div>
+    <div class="flow-item"><span class="flow-num">3</span><strong>Initial training</strong><small>Pretrained ResNet50</small></div>
+    <div class="flow-item"><span class="flow-num">4</span><strong>DGM evolution</strong><small>Train · validate · select</small></div>
+    <div class="flow-item"><span class="flow-num">5</span><strong>Independent testing</strong><small>Evaluate the selected model</small></div>
+   </div>
+   <div class="deep">
+    <div class="deep-card"><h3>Model improvement loop</h3><p>Candidate configurations are generated and assessed using validation performance. The selected candidate becomes the starting point for the next iteration, while the test set remains reserved for final evaluation.</p></div>
+    <div class="deep-card"><h3>Representation geometry</h3><p>ResNet50 feature representations are mapped through an autoencoder. The decoder-induced metric is analysed using Hessian-vector products and iterative eigensolvers such as Lanczos, alongside curvature estimation.</p></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="metrics" id="results">
+ <div class="container">
+  <span class="section-kicker">Experimental evaluation</span>
+  <h2 class="section-title">Measuring classification performance</h2>
+  <p class="section-intro">The evaluation framework considers overall performance as well as the ability to identify malignant cases.</p>
+  <div class="metric-grid">
+   <div class="metric"><strong>Accuracy</strong><span>Overall correctness</span></div>
+   <div class="metric"><strong>Macro F1</strong><span>Class-balanced performance</span></div>
+   <div class="metric"><strong>Sensitivity</strong><span>Malignant case detection</span></div>
+   <div class="metric"><strong>Specificity</strong><span>Benign case identification</span></div>
+   <div class="metric"><strong>ROC-AUC</strong><span>Discrimination ability</span></div>
+  </div>
+  <p class="metric-note">Reported experimental snapshot from a prior project discussion: on a 546-image test evaluation, the baseline-to-evolved comparison was reported as accuracy 91.03% → 96.89%, macro-F1 90.15% → 96.46%, malignant sensitivity 89.19% → 97.03%, and ROC-AUC 0.9754 → 0.9934. These figures should be checked against the final experiment logs, split protocol and statistical analysis before publication or external use.</p>
+ </div>
+</section>
+
+<section id="future">
+ <div class="container">
+  <div class="center">
+   <span class="section-kicker">Beyond the current study</span>
+   <h2 class="section-title">Building towards robust and generalizable AI pathology</h2>
+   <p class="section-intro">The next stage is to test the approach more broadly and establish the evidence needed for responsible translation into clinical research settings.</p>
+  </div>
+  <div class="roadmap-grid">
+   <div class="roadmap-item"><h3>External validation</h3><p>Evaluate performance on independent cohorts and images from different institutions, scanners and staining conditions.</p></div>
+   <div class="roadmap-item"><h3>Model robustness</h3><p>Study sensitivity to image variation, augmentation, acquisition conditions and distribution shifts.</p></div>
+   <div class="roadmap-item"><h3>Explainability and geometry</h3><p>Investigate links between latent-space structure, local geometric properties and classification behaviour.</p></div>
+   <div class="roadmap-item"><h3>Broader cancer applications</h3><p>Explore adaptation of the computational framework to additional histopathology datasets and cancer types.</p></div>
+   <div class="roadmap-item"><h3>Clinical collaboration</h3><p>Work with pathology experts to define relevant tasks, annotation protocols and clinically meaningful evaluation.</p></div>
+   <div class="roadmap-item"><h3>Responsible development</h3><p>Prioritize reproducibility, patient-level data separation, transparent reporting and human oversight.</p></div>
+  </div>
+  <div class="disclaimer"><strong>Research-use statement:</strong> This work describes an experimental AI research pipeline. It is not a clinically validated diagnostic system and is not intended to replace pathologist assessment or provide standalone medical diagnoses.</div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="container">
+  <span class="section-kicker">Connect and collaborate</span>
+  <h2 class="section-title">Interested in AI for digital pathology?</h2>
+  <p class="section-intro">We welcome research discussions and collaborations in computational pathology, deep learning, medical image analysis and responsible AI.</p>
+  <div class="contact-box">
+   <div><h3>Let's advance AI-driven diagnostics together.</h3><p>For research partnerships, technical discussions and collaboration opportunities.</p></div>
+   <!-- Replace the placeholder email address with your official contact address. -->
+   <a class="button" href="mailto:contact@example.com?subject=AI%20Cancer%20Diagnostics%20Research">Contact the research team</a>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="container footer-row">
+  <div><strong>AI Cancer Diagnostics</strong><br>Research & Innovation in Computational Pathology</div>
+  <div>Deep Learning · Histopathology · Geometric AI</div>
+  <div>© <span id="year"></span> Research & Development</div>
+ </div>
+</footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+document.querySelectorAll('nav a').forEach(a => a.addEventListener('click', () => document.querySelector('nav').classList.remove('open')));
+</script>
+</body>
+</html>
